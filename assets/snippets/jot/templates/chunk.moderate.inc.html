@@ -1,0 +1,17 @@
+<a name="jotmod[+jot.link.id+]"></a>
+<div class="jot-list">
+<b>Модерация:</b>
+<ul>
+<li>Вы просматриваете <b>[+jot.moderation.view:select=`0=неопубликованные&1=обпубликованные&2=все`+]</b> комментарии.</li>
+[+jot.moderation.view:isnt=`0`:then=`
+<li>Смотреть <a href="[+jot.link.view:esc+][+jot.querykey.view+]=0#jotmod[+jot.link.id+]">неопубликованные</a> коментарии ([+jot.moderation.unpublished+])</li>
+`:strip+]
+[+jot.moderation.view:isnt=`1`:then=`
+<li>Смотреть <a href="[+jot.link.view:esc+][+jot.querykey.view+]=1#jotmod[+jot.link.id+]">опубликованные</a> коментарии ([+jot.moderation.published+])</li>
+`:strip+]
+[+jot.moderation.view:isnt=`2`:then=`
+<li>Смотреть <a href="[+jot.link.view:esc+][+jot.querykey.view+]=2#jotmod[+jot.link.id+]">mixed</a> comments ([+jot.moderation.mixed+])</li>
+`:strip+]
+</ul>
+</div>
+
